@@ -420,7 +420,7 @@ Example:
 
 # What is a good API:
 
-A good a API as authenticated and validated that no one can manipulate 
+A good a API authenticated and validated that no one can manipulate 
 it and get information he is not supposed to have access to.
 
 
