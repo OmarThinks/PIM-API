@@ -304,6 +304,78 @@ http://127.0.0.1:8000/api/docs</a>
 
 ## 1) Product:
 
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Unique</th>
+		<th>Nullable</th>
+		<th>Min</th>
+		<th>Max</th>
+		<th>PrimaryKey</th>
+		<th>ForeignKey</th>
+	</tr>
+	<tr>
+		<th>id</th>
+		<td>Integer</td>
+		<td>True</td>
+		<td>False</td>
+		<td>1</td>
+		<td></td>
+		<td>True</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>name</th>
+		<td>String</td>
+		<td>False</td>
+		<td>False</td>
+		<td>min len = 3</td>
+		<td>max len = 300</td>
+		<td>False</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>price</th>
+		<td>Float</td>
+		<td>False</td>
+		<td>False</td>
+		<td>0.1</td>
+		<td>1000000</td>
+		<td>False</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>quantity</th>
+		<td>float</td>
+		<td>False</td>
+		<td>False</td>
+		<td>.001</td>
+		<td>100000000</td>
+		<td>False</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>code</th>
+		<td>Integer</td>
+		<td>True</td>
+		<td>True</td>
+		<td>3</td>
+		<td>100000000000000000000000000</td>
+		<td>False</td>
+		<td></td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
 1. Each product has a unique `id`
 2. Each product has a `name`, `price` and `quantity`, they are not unique, 
 and they can not be equal to `null`
@@ -332,6 +404,73 @@ and they can not be equal to `null`
 
 ## 2) Category:
 
+
+
+
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Unique</th>
+		<th>Nullable</th>
+		<th>Min</th>
+		<th>Max</th>
+		<th>PrimaryKey</th>
+		<th>ForeignKey</th>
+	</tr>
+	<tr>
+		<th>id</th>
+		<td>Integer</td>
+		<td>True</td>
+		<td>False</td>
+		<td>1</td>
+		<td></td>
+		<td>True</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>name</th>
+		<td>String</td>
+		<td>True</td>
+		<td>False</td>
+		<td>min len = 3</td>
+		<td>max len = 300</td>
+		<td>False</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>parent_id</th>
+		<td>Integer</td>
+		<td>False</td>
+		<td>True</td>
+		<td>1</td>
+		<td></td>
+		<td>False</td>
+		<td>Category.id</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1. Each category has a unique `id`
 2. Each category has a `name`, `parent_id`
 3. `name` is unique, and can not be equal to `null`
@@ -347,6 +486,71 @@ and they can not be equal to `null`
 
 
 ## 2) ProductCategory:
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Unique</th>
+		<th>Nullable</th>
+		<th>Min</th>
+		<th>Max</th>
+		<th>PrimaryKey</th>
+		<th>ForeignKey</th>
+	</tr>
+	<tr>
+		<th>id</th>
+		<td>Integer</td>
+		<td>True</td>
+		<td>False</td>
+		<td>1</td>
+		<td></td>
+		<td>True</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>category_id</th>
+		<td>Integer</td>
+		<td>False</td>
+		<td>False</td>
+		<td>1</td>
+		<td></td>
+		<td>False</td>
+		<td>Category.id</td>
+	</tr>
+	<tr>
+		<th>product_id</th>
+		<td>Integer</td>
+		<td>False</td>
+		<td>False</td>
+		<td>1</td>
+		<td></td>
+		<td>False</td>
+		<td>Product.id</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
 
 1. Each ProductCategory has a unique `id`
 2. Each ProductCategory has a `product_id`, `category_id`, 
