@@ -306,7 +306,7 @@ http://127.0.0.1:8000/api/docs</a>
 
 1. Each product has a unique `id`
 2. Each product has a `name`, `price` and `quantity`, they are not unique, 
-and they can be equal to `null`
+and they can not be equal to `null`
 3. `name` is string
 	- Example: "Cheese"
 4. `price` is float
@@ -322,7 +322,7 @@ and they can be equal to `null`
 	- There can be lots of products with code equal to null
 9. When deleting a Product
 	1. catogories will not be affected
-	2. all `ProductCategory` related to this productwill be deleted
+	2. all `ProductCategory` related to this product will be deleted
 		- Do not confuse with `Category`
 		- Categories will not be affected
 
@@ -343,12 +343,14 @@ and they can be equal to `null`
 	2. Products will not be affected at all
 	3. ProductCategory related to this Category will be deleted
 		- Do not confuse Product and ProductCategory
+		- Product will not be affected be the deletion
 
 
 ## 2) ProductCategory:
 
 1. Each ProductCategory has a unique `id`
-2. Each ProductCategory has a `product_id`, `category_id`
+2. Each ProductCategory has a `product_id`, `category_id`, 
+they can not be equal to null
 3. the pair of (`product_id`, `category_id`) is unique
 4. a ProductCategory will be deleted **Automatically** in any of those cases
 	1. Associated Product is deleted
@@ -420,9 +422,10 @@ Example:
 
 # What is a good API:
 
-A good a API authenticated and validated that no one can manipulate 
+- A good a API authenticated and validated that no one can manipulate 
 it and get information he is not supposed to have access to.
-
+- Secure
+- Tested
 
 
 
